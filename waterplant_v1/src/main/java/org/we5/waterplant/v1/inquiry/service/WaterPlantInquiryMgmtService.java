@@ -5,6 +5,8 @@ package org.we5.waterplant.v1.inquiry.service;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,10 @@ public class WaterPlantInquiryMgmtService {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	DataSource dataSource;
+
 
 	@Transactional("transactionManager")
 	public User getUserByUserId(String userId) {
