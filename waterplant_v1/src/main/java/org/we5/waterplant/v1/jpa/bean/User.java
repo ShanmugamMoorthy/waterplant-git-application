@@ -12,7 +12,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name="waterplant_user", schema = "waterplant")
-@NamedQuery(name="WaterplantUser.findAll", query="SELECT w FROM WaterplantUser w")
+@NamedQuery(name="User.findAll", query="SELECT w FROM User w")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,7 @@ public class User implements Serializable {
 	//bi-directional many-to-one association to WaterplantUserrole
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="Role_id")
-	private Userrole waterplantUserrole;
+	private UserRole waterplantUserrole;
 
 	public User() {
 	}
@@ -92,11 +92,11 @@ public class User implements Serializable {
 		return waterplantEmployee;
 	}
 
-	public Userrole getWaterplantUserrole() {
+	public UserRole getWaterplantUserrole() {
 		return this.waterplantUserrole;
 	}
 
-	public void setWaterplantUserrole(Userrole waterplantUserrole) {
+	public void setWaterplantUserrole(UserRole waterplantUserrole) {
 		this.waterplantUserrole = waterplantUserrole;
 	}
 

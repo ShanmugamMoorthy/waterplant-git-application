@@ -11,8 +11,8 @@ import java.util.Set;
  */
 @Entity
 @Table(name="waterplant_paymentcategory")
-@NamedQuery(name="WaterplantPaymentcategory.findAll", query="SELECT w FROM WaterplantPaymentcategory w")
-public class Paymentcategory implements Serializable {
+@NamedQuery(name="PaymentCategory.findAll", query="SELECT w FROM PaymentCategory w")
+public class PaymentCategory implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,7 +25,7 @@ public class Paymentcategory implements Serializable {
 	@OneToMany(mappedBy="waterplantPaymentcategory")
 	private Set<Payment> waterplantPayments;
 
-	public Paymentcategory() {
+	public PaymentCategory() {
 	}
 
 	public int getCatID() {

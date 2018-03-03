@@ -11,7 +11,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name="waterplant_vendor")
-@NamedQuery(name="WaterplantVendor.findAll", query="SELECT w FROM WaterplantVendor w")
+@NamedQuery(name="Vendor.findAll", query="SELECT w FROM Vendor w")
 public class Vendor implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name="waterplant_order")
-@NamedQuery(name="WaterplantOrder.findAll", query="SELECT w FROM WaterplantOrder w")
+@NamedQuery(name="Order.findAll", query="SELECT w FROM Order w")
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 
