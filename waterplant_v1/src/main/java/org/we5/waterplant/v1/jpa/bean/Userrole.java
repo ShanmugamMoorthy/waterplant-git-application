@@ -22,8 +22,8 @@ public class UserRole implements Serializable {
 	private String userRole;
 
 	//bi-directional many-to-one association to WaterplantUser
-	@OneToMany(mappedBy="waterplantUserrole")
-	private Set<User> waterplantUsers;
+	//@OneToMany(mappedBy="waterplantUserrole")
+	//private Set<User> waterplantUsers;
 
 	public UserRole() {
 	}
@@ -44,15 +44,15 @@ public class UserRole implements Serializable {
 		this.userRole = userRole;
 	}
 
-	public Set<User> getWaterplantUsers() {
+	/*public Set<User> getWaterplantUsers() {
 		return this.waterplantUsers;
 	}
 
 	public void setWaterplantUsers(Set<User> waterplantUsers) {
 		this.waterplantUsers = waterplantUsers;
-	}
+	}*/
 
-	public User addWaterplantUser(User waterplantUser) {
+	/*public User addWaterplantUser(User waterplantUser) {
 		getWaterplantUsers().add(waterplantUser);
 		waterplantUser.setWaterplantUserrole(this);
 
@@ -64,6 +64,6 @@ public class UserRole implements Serializable {
 		waterplantUser.setWaterplantUserrole(null);
 
 		return waterplantUser;
-	}
+	}*/
 
 }

@@ -26,14 +26,14 @@ public class User implements Serializable {
 
 	private String userPassword;
 
-	//bi-directional many-to-one association to WaterplantEmployee
-	@OneToMany(mappedBy="waterplantUser")
+	/*//bi-directional many-to-one association to WaterplantEmployee
+	@OneToMany(mappedBy="waterplantUser", fetch=FetchType.EAGER)
 	private Set<Employee> waterplantEmployees;
 
 	//bi-directional many-to-one association to WaterplantUserrole
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="Role_id")
-	private UserRole waterplantUserrole;
+	private UserRole waterplantUserrole;*/
 
 	public User() {
 	}
@@ -70,34 +70,34 @@ public class User implements Serializable {
 		this.userPassword = userPassword;
 	}
 
-	public Set<Employee> getWaterplantEmployees() {
+	/*public Set<Employee> getWaterplantEmployees() {
 		return this.waterplantEmployees;
 	}
 
 	public void setWaterplantEmployees(Set<Employee> waterplantEmployees) {
 		this.waterplantEmployees = waterplantEmployees;
-	}
+	}*/
 
-	public Employee addWaterplantEmployee(Employee waterplantEmployee) {
+	/*public Employee addWaterplantEmployee(Employee waterplantEmployee) {
 		getWaterplantEmployees().add(waterplantEmployee);
 		waterplantEmployee.setWaterplantUser(this);
 
 		return waterplantEmployee;
 	}
-
-	public Employee removeWaterplantEmployee(Employee waterplantEmployee) {
+*/
+	/*public Employee removeWaterplantEmployee(Employee waterplantEmployee) {
 		getWaterplantEmployees().remove(waterplantEmployee);
 		waterplantEmployee.setWaterplantUser(null);
 
 		return waterplantEmployee;
-	}
+	}*/
 
-	public UserRole getWaterplantUserrole() {
+	/*public UserRole getWaterplantUserrole() {
 		return this.waterplantUserrole;
 	}
 
 	public void setWaterplantUserrole(UserRole waterplantUserrole) {
 		this.waterplantUserrole = waterplantUserrole;
-	}
+	}*/
 
 }
