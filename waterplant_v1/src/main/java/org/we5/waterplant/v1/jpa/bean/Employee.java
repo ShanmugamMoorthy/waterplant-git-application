@@ -29,9 +29,9 @@ public class Employee implements Serializable {
 	private String name;
 
 	//bi-directional many-to-one association to WaterplantUser
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="UserId")
-	private User waterplantUser;
+	//@ManyToOne(fetch=FetchType.EAGER)
+	//@JoinColumn(name="UserId")
+	//private User waterplantUser;
 
 	public Employee() {
 	}
@@ -84,12 +84,12 @@ public class Employee implements Serializable {
 		this.name = name;
 	}
 
-	public User getWaterplantUser() {
+	/*public User getWaterplantUser() {
 		return this.waterplantUser;
 	}
 
 	public void setWaterplantUser(User waterplantUser) {
 		this.waterplantUser = waterplantUser;
-	}
+	}*/
 
 }
