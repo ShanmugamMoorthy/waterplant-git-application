@@ -11,7 +11,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name="waterplant_instock")
-@NamedQuery(name="WaterplantInstock.findAll", query="SELECT w FROM WaterplantInstock w")
+@NamedQuery(name="Instock.findAll", query="SELECT w FROM Instock w")
 public class Instock implements Serializable {
 	private static final long serialVersionUID = 1L;
 

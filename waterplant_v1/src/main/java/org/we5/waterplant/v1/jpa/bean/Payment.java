@@ -11,7 +11,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name="waterplant_payment")
-@NamedQuery(name="WaterplantPayment.findAll", query="SELECT w FROM WaterplantPayment w")
+@NamedQuery(name="Payment.findAll", query="SELECT w FROM Payment w")
 public class Payment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -31,7 +31,7 @@ public class Payment implements Serializable {
 	//bi-directional many-to-one association to WaterplantPaymentcategory
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="Payment_Type")
-	private Paymentcategory waterplantPaymentcategory;
+	private PaymentCategory waterplantPaymentcategory;
 
 	public Payment() {
 	}
@@ -68,11 +68,11 @@ public class Payment implements Serializable {
 		this.waterplantCustomer = waterplantCustomer;
 	}
 
-	public Paymentcategory getWaterplantPaymentcategory() {
+	public PaymentCategory getWaterplantPaymentcategory() {
 		return this.waterplantPaymentcategory;
 	}
 
-	public void setWaterplantPaymentcategory(Paymentcategory waterplantPaymentcategory) {
+	public void setWaterplantPaymentcategory(PaymentCategory waterplantPaymentcategory) {
 		this.waterplantPaymentcategory = waterplantPaymentcategory;
 	}
 

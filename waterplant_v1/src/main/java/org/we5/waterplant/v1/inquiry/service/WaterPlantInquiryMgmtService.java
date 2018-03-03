@@ -5,14 +5,11 @@ package org.we5.waterplant.v1.inquiry.service;
 
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.we5.waterplant.v1.exception.RestExceptionHandler;
 import org.we5.waterplant.v1.jpa.bean.User;
-import org.we5.waterplant.v1.jpa.repository.UserRepository;
+import org.we5.waterplant.v1.jpa.dao.UserDao;
 
 /**
  * @author KARNA
@@ -25,18 +22,13 @@ public class WaterPlantInquiryMgmtService {
 	RestExceptionHandler exceptionHandler;
 
 	@Autowired
-	UserRepository userRepository;
-	
-	@Autowired
-	DataSource dataSource;
+	UserDao userDao;
 
-
-	@Transactional("transactionManager")
 	public User getUserByUserId(String userId) {
 
 		User userObject = null;
 		try {
-			userObject = userRepository.getOne(Integer.parseInt(userId));
+			userObject = userDao.findById(userId);
 		} catch (Exception ex) {
 			exceptionHandler.handleServiceException(ex);
 		}
@@ -44,12 +36,11 @@ public class WaterPlantInquiryMgmtService {
 		return userObject;
 	}
 
-	@Transactional("transactionManager")
 	public List<User> getUsers() {
 
 		List<User> userList = null;
 		try {
-			userList = userRepository.findAll();
+			userList = userDao.findAllUsers();
 		} catch (Exception ex) {
 			exceptionHandler.handleServiceException(ex);
 		}

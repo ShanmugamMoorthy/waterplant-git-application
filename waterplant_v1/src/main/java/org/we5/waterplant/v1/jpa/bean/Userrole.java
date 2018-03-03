@@ -11,8 +11,8 @@ import java.util.Set;
  */
 @Entity
 @Table(name="waterplant_userrole")
-@NamedQuery(name="WaterplantUserrole.findAll", query="SELECT w FROM WaterplantUserrole w")
-public class Userrole implements Serializable {
+@NamedQuery(name="UserRole.findAll", query="SELECT w FROM UserRole w")
+public class UserRole implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,7 +25,7 @@ public class Userrole implements Serializable {
 	@OneToMany(mappedBy="waterplantUserrole")
 	private Set<User> waterplantUsers;
 
-	public Userrole() {
+	public UserRole() {
 	}
 
 	public int getId() {
